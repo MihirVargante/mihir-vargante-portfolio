@@ -1,0 +1,116 @@
+.experience__timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 2em;
+}
+
+.experience__timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--clr-primary), transparent);
+}
+
+.experience__item {
+  position: relative;
+  margin-bottom: 2.5em;
+  display: flex;
+  gap: 1.5em;
+  align-items: flex-start;
+}
+
+.experience__item:last-child {
+  margin-bottom: 0;
+}
+
+.experience__dot {
+  position: absolute;
+  left: -2.42em;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--clr-primary);
+  border: 2px solid var(--clr-bg);
+  box-shadow: 0 0 0 2px var(--clr-primary);
+  flex-shrink: 0;
+}
+
+.experience__body {
+  background: var(--clr-bg-alt);
+  border-radius: 12px;
+  padding: 1.5em;
+  width: 100%;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.experience__body:hover {
+  transform: translateY(-3px);
+}
+
+.experience__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-bottom: 0.8em;
+}
+
+.experience__role {
+  font-size: 1.1rem;
+  color: var(--clr-fg-alt);
+  margin-bottom: 0.2em;
+}
+
+.experience__company {
+  color: var(--clr-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.experience__duration {
+  font-size: 0.85rem;
+  color: var(--clr-fg);
+  opacity: 0.7;
+  white-space: nowrap;
+  padding-top: 0.2em;
+}
+
+.experience__desc {
+  list-style: none;
+  margin-top: 0.8em;
+}
+
+.experience__desc li {
+  position: relative;
+  padding-left: 1.2em;
+  margin-bottom: 0.5em;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--clr-fg);
+}
+
+.experience__desc li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--clr-primary);
+  font-size: 0.8rem;
+  top: 2px;
+}
+
+@media (max-width: 600px) {
+  .experience__header {
+    flex-direction: column;
+  }
+
+  .experience__timeline {
+    padding-left: 1.5em;
+  }
+}

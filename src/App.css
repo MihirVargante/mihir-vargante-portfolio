@@ -6,22 +6,22 @@
 }
 
 .light {
-  --clr-bg: #fcfcfc;
-  --clr-bg-alt: #fff;
+  --clr-bg: #f8f9fc;
+  --clr-bg-alt: #ffffff;
   --clr-fg: #555;
-  --clr-fg-alt: #444;
+  --clr-fg-alt: #333;
   --clr-primary: #2978b5;
-  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --shadow: rgba(100, 100, 111, 0.15) 0px 7px 29px 0px;
 }
 
 .dark {
-  --clr-bg: #23283e;
-  --clr-bg-alt: #2a2f4c;
+  --clr-bg: #1a1d2e;
+  --clr-bg-alt: #22263a;
   --clr-fg: #bdbddd;
-  --clr-fg-alt: #cdcdff;
+  --clr-fg-alt: #e0e0ff;
   --clr-primary: #90a0d9;
-  --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  --shadow: rgba(0, 0, 0, 0.3) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 main {
@@ -31,13 +31,25 @@ main {
 }
 
 .section {
-  margin-top: 5em;
+  margin-top: 6em;
 }
 
 .section__title {
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
+  position: relative;
+}
+
+.section__title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--clr-primary);
+  border-radius: 2px;
+  margin: 0.4em auto 0;
 }
 
 .center {
@@ -97,6 +109,7 @@ main {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border-radius: 6px;
 }
 
 .btn--outline:hover,
@@ -126,6 +139,7 @@ main {
   background-color: var(--clr-bg-alt);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
   border: 0;
+  border-radius: 6px;
 }
 
 .btn--plain:hover {
@@ -143,6 +157,39 @@ main {
 
 .btn--icon:active {
   transform: translateY(-5px);
+}
+
+/* ── Scroll reveal animations ─────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero fade-in on load */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about {
+  animation: heroFadeIn 0.7s ease both;
+}
+
+.about__img-wrap {
+  animation: heroFadeIn 0.7s ease 0.2s both;
 }
 
 @media (max-width: 600px) {

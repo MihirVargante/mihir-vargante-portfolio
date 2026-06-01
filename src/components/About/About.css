@@ -1,6 +1,14 @@
 .about {
-  flex-direction: column;
-  margin-top: 3em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3em;
+  margin-top: 4em;
+}
+
+.about__content {
+  flex: 1;
 }
 
 .about__name {
@@ -13,28 +21,52 @@
 
 .about__desc {
   font-size: 1rem;
-  max-width: 600px;
+  max-width: 560px;
+  line-height: 1.7;
+  margin-top: 1.6em;
 }
 
-.about__desc,
 .about__contact {
-  margin-top: 2.4em;
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  margin-top: 2em;
 }
 
-.about .link--icon {
-  margin-right: 0.8em;
+.about__img-wrap {
+  flex-shrink: 0;
+  position: relative;
 }
 
-.about .btn--outline {
-  margin-right: 1em;
+.about__img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--clr-primary) 0%, transparent 60%);
+  z-index: 0;
+  opacity: 0.6;
+  animation: rotateBorder 8s linear infinite;
 }
 
-@media (max-width: 600px) {
-  .app .about {
-    align-items: flex-start;
-    margin-top: 2em;
-  }
+.about__img {
+  position: relative;
+  z-index: 1;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 4px solid var(--clr-bg);
+  box-shadow: var(--shadow);
+  display: block;
 }
+
+@keyframes rotateBorder {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 .typing {
   color: var(--clr-primary);
   font-weight: 600;
@@ -42,9 +74,33 @@
 
 .cursor {
   animation: blink 1s infinite;
+  margin-left: 1px;
 }
 
 @keyframes blink {
   0%, 50%, 100% { opacity: 1 }
   25%, 75% { opacity: 0 }
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    margin-top: 2.5em;
+    gap: 2em;
+  }
+
+  .about__img {
+    width: 170px;
+    height: 170px;
+  }
+
+  .about__contact {
+    justify-content: center;
+  }
+
+  .about__desc {
+    max-width: 100%;
+  }
 }
