@@ -6,12 +6,15 @@ const header = {
 const about = {
   name: 'Mihir Vargante',
   role: 'Full Stack Developer',
+  openToWork: true,
   description:
-    'Full Stack Developer at Factech with 1.5+ years of experience building scalable products and intuitive user experiences. I work across the stack — from redesigning dashboards with D3.js to optimizing Spring Boot APIs — and enjoy delivering solutions that create measurable impact.',
+    'Full Stack Developer who enjoys turning complex problems into clean, scalable solutions. I care deeply about performance, user experience, and writing code that lasts — from building intuitive interfaces to architecting reliable back-end systems that deliver real business impact.',
   resume: 'https://drive.google.com/file/d/14M9D5dHX2OUkk-fhCIcHmU8F9j6tvEtx/view?usp=sharing',
   social: {
     linkedin: 'https://www.linkedin.com/in/mihir-vargante/',
     github: 'https://github.com/MihirVargante',
+    twitter: 'https://x.com/Mihir_Vargante',
+    instagram: 'https://www.instagram.com/mahi_vargante_115/',
   },
   avatar: 'avatar.jpg',
 }

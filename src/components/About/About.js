@@ -1,11 +1,12 @@
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import DescriptionIcon from '@material-ui/icons/Description'
 import { about } from '../../portfolio'
 import './About.css'
 import useTypewriter from './useTypewriter'
 
 const About = () => {
-  const { name, role, description, resume, social, avatar } = about
+  const { name, description, resume, social, avatar, openToWork } = about
 
   const typedRole = useTypewriter([
     'Full Stack Developer',
@@ -17,6 +18,13 @@ const About = () => {
   return (
     <div className='about'>
       <div className='about__content'>
+        {openToWork && (
+          <div className='about__badge'>
+            <span className='about__badge-dot' />
+            Open to Work
+          </div>
+        )}
+
         {name && (
           <h1>
             Hi, I am <span className='about__name'>{name}.</span>
@@ -32,8 +40,14 @@ const About = () => {
 
         <div className='about__contact'>
           {resume && (
-            <a href={resume} target='_blank' rel='noreferrer'>
-              <span className='btn btn--outline'>Resume</span>
+            <a
+              href={resume}
+              target='_blank'
+              rel='noreferrer'
+              className='about__btn about__btn--filled'
+            >
+              <DescriptionIcon fontSize='small' />
+              Resume
             </a>
           )}
 
@@ -42,9 +56,10 @@ const About = () => {
               href={social.github}
               target='_blank'
               rel='noreferrer'
-              className='link link--icon'
+              className='about__btn about__btn--outline'
             >
-              <GitHubIcon />
+              <GitHubIcon fontSize='small' />
+              GitHub
             </a>
           )}
 
@@ -53,9 +68,10 @@ const About = () => {
               href={social.linkedin}
               target='_blank'
               rel='noreferrer'
-              className='link link--icon'
+              className='about__btn about__btn--outline'
             >
-              <LinkedInIcon />
+              <LinkedInIcon fontSize='small' />
+              LinkedIn
             </a>
           )}
         </div>

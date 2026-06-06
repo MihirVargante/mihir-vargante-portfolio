@@ -1,5 +1,7 @@
 import GitHubIcon from '@material-ui/icons/GitHub'
+import InstagramIcon from '@material-ui/icons/Instagram'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import TwitterIcon from '@material-ui/icons/Twitter'
 import { about } from '../../portfolio'
 import './Footer.css'
 
@@ -26,6 +28,28 @@ const Footer = () => (
           rel='noreferrer'
         >
           <LinkedInIcon />
+        </a>
+      )}
+      {about.social?.twitter && (
+        <a
+          href={about.social.twitter}
+          aria-label='twitter'
+          className='link link--icon footer__icon'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <TwitterIcon />
+        </a>
+      )}
+      {about.social?.instagram && (
+        <a
+          href={about.social.instagram}
+          aria-label='instagram'
+          className='link link--icon footer__icon'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <InstagramIcon />
         </a>
       )}
     </div>
