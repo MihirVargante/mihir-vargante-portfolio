@@ -8,7 +8,7 @@ const about = {
   role: 'Full Stack Developer',
   openToWork: true,
   description:
-    'Full Stack Developer who enjoys turning complex problems into clean, scalable solutions. I care deeply about performance, user experience, and writing code that lasts — from building intuitive interfaces to architecting reliable back-end systems that deliver real business impact.',
+    'Full Stack Developer who enjoys turning complex problems into clean, scalable solutions. I care deeply about performance, user experience, and writing code that lasts.From building intuitive interfaces to architecting reliable back-end systems that deliver real business impact.',
   resume: 'https://drive.google.com/file/d/14M9D5dHX2OUkk-fhCIcHmU8F9j6tvEtx/view?usp=sharing',
   social: {
     linkedin: 'https://www.linkedin.com/in/mihir-vargante/',
@@ -49,6 +49,7 @@ const projects = [
     description:
       'Scalable e-commerce platform handling 5,000+ active users and 10,000+ monthly transactions. Integrated third-party APIs (SmileOne, MooGold) for automated product sync and order fulfillment. Redis caching reduced response times by 40% and database load by 50%.',
     stack: ['Angular', 'Spring Boot', 'PostgreSQL', 'Redis', 'Docker', 'Java'],
+    image: `${process.env.PUBLIC_URL}/mycredworld.png`,
     sourceCode: '',
     livePreview: 'https://www.mycredworld.com/',
   },
@@ -73,6 +74,7 @@ const projects = [
     description:
       'Responsive anime discovery website with user-friendly design and smooth navigation. Features JWT and OTP authentication for enhanced security and account privacy.',
     stack: ['React', 'Tailwind CSS', 'JWT', 'Node.js'],
+    image: `${process.env.PUBLIC_URL}/anime-info.png`,
     sourceCode: 'https://github.com/MihirVargante/AnimeInfo',
     livePreview: 'https://anime-info-sage.vercel.app/',
   },
