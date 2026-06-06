@@ -32,7 +32,7 @@ const About = () => {
         )}
 
         <h2 className='about__role'>
-          I am a <span className='typing'>{typedRole}</span>
+          <span className='typing'>{typedRole}</span>
           <span className='cursor'>|</span>
         </h2>
 
